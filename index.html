@@ -17,7 +17,6 @@
             color: #0f172a;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            /* Empêche le scroll horizontal indésirable */
         }
 
         .glass {
@@ -34,7 +33,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Animation de fond */
         .bg-glow {
             position: fixed;
             top: 0;
@@ -46,12 +44,16 @@
             pointer-events: none;
         }
 
-        /* Correction pour les vidéos et images */
         img,
         video,
         iframe {
             max-width: 100%;
             height: auto;
+        }
+
+        /* AJOUT POUR LE MENU MOBILE */
+        #menu-toggle:checked~#mobile-menu {
+            display: block;
         }
     </style>
 </head>
@@ -62,17 +64,30 @@
 
     <nav class="fixed top-4 w-full z-50 px-4 md:px-6">
         <div
-            class="max-w-5xl mx-auto glass px-6 py-4 flex justify-between items-center border border-white/50 bg-white/90 shadow-sm">
+            class="max-w-5xl mx-auto glass px-6 py-4 flex justify-between items-center border border-white/50 bg-white/90 shadow-sm relative">
             <span class="text-lg md:text-xl font-extrabold tracking-tighter">Lucrèce.DEKPO</span>
+
             <div class="hidden md:flex space-x-8 text-sm font-semibold opacity-70">
                 <a href="#home" class="hover:text-blue-600 transition">Accueil</a>
                 <a href="#about" class="hover:text-blue-600 transition">À Propos</a>
                 <a href="#services" class="hover:text-blue-600 transition">Services</a>
                 <a href="#work" class="hover:text-blue-600 transition">Portfolio</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                <a href="#career" class="hover:text-blue-600 transition">Projet Pro</a> <a href="#contact"
+                    class="hover:text-blue-600 transition">Contact</a>
             </div>
-            <div class="md:hidden">
-                <a href="#contact" class="text-xs bg-slate-900 text-white px-4 py-2 rounded-full font-bold">Contact</a>
+
+            <label for="menu-toggle" class="md:hidden cursor-pointer"><i class="fas fa-bars text-lg"></i></label>
+            <input type="checkbox" id="menu-toggle" class="hidden">
+
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full glass bg-white mt-2 p-6 md:hidden shadow-xl text-center">
+                <div class="flex flex-col space-y-4 font-bold uppercase text-xs tracking-widest">
+                    <a href="#home">Accueil</a>
+                    <a href="#about">À Propos</a>
+                    <a href="#work">Portfolio</a>
+                    <a href="#career">Projet Pro</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -93,6 +108,10 @@
                     <a href="#work"
                         class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition shadow-lg shadow-blue-200 text-center">Mes
                         Réalisations</a>
+                    <a href="img/CV_Lucresse_Dekpo.pdf" download
+                        class="bg-white border border-slate-200 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-download text-blue-600"></i> Télécharger CV
+                    </a>
                 </div>
             </div>
             <div class="relative w-full max-w-md mx-auto md:max-w-full" data-aos="zoom-in" data-aos-delay="200">
@@ -112,10 +131,12 @@
                 <div class="order-2 md:order-1" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-extrabold mb-8 tracking-tight">Derrière la Caméra</h2>
                     <p class="text-slate-500 leading-relaxed mb-6">
-                        Je suis <span class="text-slate-900 font-bold">Lucresse Dekpo</span>, une passionnée de
-                        narration visuelle. Je suis apprenante en cadrage et montage vidéo, passionnée par l’audiovisuel et la production vidéo.
-                        Au cours de ma formation, j’ai participé à plusieurs projets pratiques, notamment des reportages, des interviews et la
-                        couverture d’événements. Ces expériences m’ont permis de développer mes compétences en prise de vue, en cadrage et en
+                        Je suis <span class="text-slate-900 font-bold">Lucresse Dekpo</span>,
+                         apprenante en cadrage et montage vidéo, passionnée par l’audiovisuel et la production vidéo. <br>
+                        Au cours de ma formation, j’ai participé à plusieurs projets pratiques, 
+                        notamment des reportages, des interviews et la
+                        couverture d’événements. Ces expériences m’ont permis de développer mes 
+                        compétences en prise de vue, en cadrage et en
                         montage.
                         Chaque projet est pour moi une occasion d’améliorer ma technique et de raconter des histoires à travers la vidéo.
                         
@@ -127,14 +148,12 @@
                         Mon objectif est de produire des vidéos de qualité, professionnelles et impactantes.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="glass p-4 text-center bg-white/40">
-                            <span class="block text-blue-600 font-extrabold">Précision</span>
-                            <span class="text-[10px] text-slate-400 font-medium uppercase">Frame par frame</span>
-                        </div>
-                        <div class="glass p-4 text-center bg-white/40">
-                            <span class="block text-purple-600 font-extrabold">Créativité</span>
-                            <span class="text-[10px] text-slate-400 font-medium uppercase">Sans limites</span>
-                        </div>
+                        <div class="glass p-4 text-center bg-white/40"><span
+                                class="block text-blue-600 font-extrabold">Précision</span><span
+                                class="text-[10px] text-slate-400 font-medium uppercase">Frame par frame</span></div>
+                        <div class="glass p-4 text-center bg-white/40"><span
+                                class="block text-purple-600 font-extrabold">Créativité</span><span
+                                class="text-[10px] text-slate-400 font-medium uppercase">Sans limites</span></div>
                     </div>
                 </div>
                 <div class="order-1 md:order-2 overflow-hidden rounded-[40px]" data-aos="fade-left">
@@ -152,20 +171,33 @@
                 <p class="text-slate-500 font-medium">Des solutions sur-mesure</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-left">
-                <div class="glass p-8 bg-white" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-10 h-10 bg-blue-100 rounded-lg mb-4 flex items-center justify-center">🎬</div>
-                    <h3 class="text-lg font-bold mb-2">Montage Vidéo</h3>
-                    <p class="text-slate-500 text-sm">Contenus réseaux sociaux et publicités impactantes.</p>
-                </div>
-                <div class="glass p-8 bg-white" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-10 h-10 bg-purple-100 rounded-lg mb-4 flex items-center justify-center">✨</div>
-                    <h3 class="text-lg font-bold mb-2">Motion Design</h3>
-                    <p class="text-slate-500 text-sm">Animations fluides et habillage graphique.</p>
-                </div>
-                <div class="glass p-8 bg-white sm:col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-10 h-10 bg-pink-100 rounded-lg mb-4 flex items-center justify-center">📸</div>
-                    <h3 class="text-lg font-bold mb-2">Identité Visuelle</h3>
-                    <p class="text-slate-500 text-sm">Visuels d'impact pour votre image de marque.</p>
+                <div class="glass p-8 bg-white" data-aos="fade-up" data-aos-delay="100">🎬 Montage Vidéo</div>
+                <div class="glass p-8 bg-white" data-aos="fade-up" data-aos-delay="200">✨ Photographie</div>
+                <div class="glass p-8 bg-white" data-aos="fade-up" data-aos-delay="300">📸 Web Design</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="career" class="py-24 px-6 bg-slate-900 text-white rounded-[40px] md:rounded-[60px] mx-4 my-10">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight">Mon Projet <span
+                        class="text-blue-400">Professionnel</span></h2>
+                <p class="text-slate-300 leading-relaxed mb-6">Mon ambition est de devenir une experte incontournable
+                    dans la production audiovisuelle au Bénin...</p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-400"></i> Montage
+                        Cinématographique</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-400"></i> Motion Design
+                    </li>
+                </ul>
+            </div>
+            <div class="glass bg-white/5 border-white/10 p-8" data-aos="fade-left">
+                <h3 class="text-xl font-bold mb-6"><i class="fas fa-location-dot text-red-500 mr-2"></i> Localisation
+                </h3>
+                <div class="space-y-4 text-sm">
+                    <p><span class="opacity-50 font-bold uppercase block">Adresse</span>Cotonou, Bénin</p>
+                    <p><span class="opacity-50 font-bold uppercase block">Freelance</span>Disponible immédiatement</p>
                 </div>
             </div>
         </div>
@@ -175,34 +207,28 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-12 text-center md:text-left">Mes <span
                     class="gradient-text">Réalisations</span></h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div class="group" data-aos="fade-up">
-                    <div
-                        class="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-xl bg-slate-200 aspect-video mb-6">
-                        <video controls class="w-full h-full object-cover">
-                            <source src="VL2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="px-2">
-                        <span class="text-blue-600 font-bold text-[10px] uppercase tracking-widest">Montage &
-                            Colorimétrie</span>
-                        <h4 class="text-xl md:text-2xl font-extrabold text-slate-900">Campagne "IMA-BENIN"</h4>
-                    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group" data-aos="fade-up"><video controls class="rounded-2xl aspect-video w-full bg-black">
+                        <source src="VL1.mp4">
+                    </video>
+                    <h4 class="mt-4 font-bold">Projet 1</h4>
                 </div>
-
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-xl bg-slate-200 aspect-video mb-6 text-center">
-                        <video controls class="w-full h-full object-cover">
-                            <source src="VL1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="px-2">
-                        <span class="text-purple-600 font-bold text-[10px] uppercase tracking-widest">Publicité
-                            Digitale</span>
-                        <h4 class="text-xl md:text-2xl font-extrabold text-slate-900">Campagne Artistique</h4>
-                    </div>
+                <div class="group" data-aos="fade-up" data-aos-delay="100"><video controls
+                        class="rounded-2xl aspect-video w-full bg-black">
+                        <source src="VL2.mp4">
+                    </video>
+                    <h4 class="mt-4 font-bold">Projet 2</h4>
+                </div>
+                <div class="group" data-aos="fade-up" data-aos-delay="200"><video controls
+                        class="rounded-2xl aspect-video w-full bg-black">
+                        <source src="VL3.mp4">
+                    </video>
+                    <h4 class="mt-4 font-bold">Projet 3</h4>
+                </div>
+                <div class="group" data-aos="fade-up"><video controls class="rounded-2xl aspect-video w-full bg-black">
+                        <source src="VL5.mp4">
+                    </video>
+                    <h4 class="mt-4 font-bold">Projet 4</h4>
                 </div>
             </div>
         </div>
@@ -210,38 +236,38 @@
 
     <section id="contact" class="py-24 md:py-32 px-6">
         <div class="max-w-4xl mx-auto glass p-8 md:p-16 text-center bg-white shadow-xl" data-aos="flip-up">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight tracking-tighter">Travaillons <span
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tighter">Travaillons <span
                     class="gradient-text">Ensemble</span>.</h2>
             <a href="mailto:dekpolucrece585@gmail.com"
                 class="text-lg md:text-2xl font-bold text-slate-900 hover:text-blue-600 transition block mb-12 break-words">
                 dekpolucrece585@gmail.com
             </a>
-
+    
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-8">
-                <a href="#" target="_blank" class="group flex flex-col items-center gap-2">
+                <a href="#" class="group flex flex-col items-center gap-2">
                     <div
-                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:to-purple-500 group-hover:text-white transition-all rounded-xl md:rounded-2xl">
+                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:to-purple-500 group-hover:text-white transition-all rounded-xl">
                         <i class="fab fa-instagram"></i>
                     </div>
                     <span class="text-[9px] uppercase font-bold text-slate-400">Instagram</span>
                 </a>
-                <a href="#" target="_blank" class="group flex flex-col items-center gap-2">
+                <a href="#" class="group flex flex-col items-center gap-2">
                     <div
-                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-[#0077b5] group-hover:text-white transition-all rounded-xl md:rounded-2xl">
+                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-[#0077b5] group-hover:text-white transition-all rounded-xl">
                         <i class="fab fa-linkedin-in"></i>
                     </div>
                     <span class="text-[9px] uppercase font-bold text-slate-400">LinkedIn</span>
                 </a>
-                <a href="https://wa.me/22951214546" target="_blank" class="group flex flex-col items-center gap-2">
+                <a href="https://wa.me/22951214546" class="group flex flex-col items-center gap-2">
                     <div
-                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-[#25D366] group-hover:text-white transition-all rounded-xl md:rounded-2xl">
+                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-[#25D366] group-hover:text-white transition-all rounded-xl">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <span class="text-[9px] uppercase font-bold text-slate-400">WhatsApp</span>
                 </a>
-                <a href="https://www.facebook.com/share/17okeSmXjx/" target="_blank" class="group flex flex-col items-center gap-2">
+                <a href="https://www.facebook.com/share/17okeSmXjx/" class="group flex flex-col items-center gap-2">
                     <div
-                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-[#1877F2] group-hover:text-white transition-all rounded-xl md:rounded-2xl">
+                        class="w-12 h-12 md:w-16 md:h-16 glass flex items-center justify-center text-xl bg-slate-50 group-hover:bg-[#1877F2] group-hover:text-white transition-all rounded-xl">
                         <i class="fab fa-facebook-f"></i>
                     </div>
                     <span class="text-[9px] uppercase font-bold text-slate-400">Facebook</span>
@@ -249,15 +275,18 @@
             </div>
         </div>
     </section>
-
+    
     <footer class="py-12 text-center text-slate-400 text-[10px] font-bold border-t border-slate-200 mt-20">
         © 2026 LUCRESSE DEKPO.
     </footer>
-
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true, easing: 'ease-out-back' });
     </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 
 </html>
